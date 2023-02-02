@@ -1,40 +1,23 @@
 {
 	"manifest_version": 2,
-	"name": "ao3filterextension",
-	"description": "Firefox extension to sort the ao3 Marked For Later page with fil",
+	"name": "AO3 Filters Extension",
+	"description": "Firefox extension to sort the ao3 Marked For Later page with filters",
 	"version": "0.0.1",
+	"homepage_url": "https://archiveofourown.org/",
 	"icons": {
 		"64": "icons/icon.png"
-	},
-	"background": {
-		"scripts": [
-			"background_script.js"
-		]
 	},
 	"content_scripts": [
 		{
 			"matches": [
-				"*://*.mozilla.org/*"
+				"*://*.archiveofourown.org/*"
 			],
 			"js": [
-				"content_script.js"
+				"scripts/content_script.js"
 			]
 		}
 	],
-	"browser_action": {
-		"default_icon": {
-			"64": "icons/icon.png"
-		},
-		"default_popup": "browserAction/index.html",
-		"default_title": "ao3filterextension"
-	},
-	"page_action": {
-		"default_icon": {
-			"64": "icons/icon.png"
-		},
-		"default_popup": "pageAction/index.html",
-		"default_title": "ao3filterextension"
-	},
+	"css": ["css/reader.css"],
 	"options_ui": {
 		"page": "options/index.html"
 	}
